@@ -9,17 +9,17 @@ public class Main {
     static Scanner in = new Scanner(System.in);
     static ResultSet rs = null;
     static Statement stmt = null;
+    static MyDataBase mdb;
 
     public static void main(String[] args) throws Exception{
         start();
     }
 
     public static void start() throws SQLException {
-        MyDataBase mdb = new MyDataBase();
+        mdb = new MyDataBase();
         mdb.getConn();
         String[] input = (in.nextLine() +" ").split(" ");
         check(input);
-        rs.close();
         stmt.close();
         mdb.getCloseConn();
         start();
@@ -45,8 +45,9 @@ public class Main {
                 }
             case "status":
                 rs = connect().executeQuery("SELECT STATUS FROM FIRST_TABLE WHERE THE_NAME = '"+theName(input, 2)+"'");
-                rs.next();
+
                 System.out.println(rs.getString("STATUS"));
+
                 break;
             case "remove": onDelete(input); break;
             case "edit": onChange(input); break;
@@ -82,24 +83,36 @@ public class Main {
         for ( int i = dop1+1; i<arr.length;i++){
             status = status + arr[i];
         }
-        connect().execute("INSERT INTO FIRST_TABLE(ID_FIRST_TABLE, KIND, THE_NAME, STATUS) VALUES( null, '"+ input[2] +"', " +
+
+        int id =1;
+        for (int i = id; i<50; i++) {
+            try {
+                rs = connect().executeQuery("SELECT ID_FIRST_TABLE FROM FIRST_TABLE where ID_FIRST_TABLE = " + i);
+                rs.next();
+            } catch (SQLException e) {
+                id = i;
+            }
+        }
+
+        connect().execute("INSERT INTO FIRST_TABLE(ID_FIRST_TABLE, KIND, THE_NAME, STATUS) VALUES( "+id +", '"+ input[2] +"', " +
                 "'"+ theName +"', '"+ status +"')"
         );
+        stmt.close();
 
     }
 
     public static void onPrint(int arrNum, String[] input, String colum) throws SQLException {
 
-        int id = 0;
         String dop = "";
         if (input.length != arrNum){
-            dop = dop+" AND THE_NAME = "+theName(input, arrNum);
-        } else {
+            dop = dop+" AND THE_NAME = '"+theName(input, arrNum)+"'";
+        } /*else {
             rs = connect().executeQuery("SELECT COUNT(THE_NAME) FROM FIRST_TABLE");
             rs.next();
             id = rs.getInt("COUNT");
             dop = dop + " AND ID_FIRST_TABLE = ";
             rs.close();
+            stmt.close();
         }
 
         for(int i =1; i<=id; i++) {
@@ -111,7 +124,17 @@ public class Main {
             }catch (SQLException e){
                 id++;
             }
+            stmt.close();
         }
+        */
+        String query[] = {"SELECT "+colum+" FROM FIRST_TABLE WHERE KIND = '" + input[(arrNum-1)] + "'"+dop};
+        for (String q: query){
+            rs = connect().executeQuery(q);
+            while (rs.next()){
+                System.out.println(rs.getString(colum));
+            }
+        }
+        stmt.close();
     }
 
     public static void onChange(String[] input) throws SQLException {
@@ -125,11 +148,15 @@ public class Main {
         }else{
             set = set + "STATUS";
         }
-        connect().execute("UPDATE FIRST_TABLE SET "+ set+"='"+newVar+"' WHERE THE_NAME= '"+theName(input, 3)+"'");
+        connect().execute("UPDATE FIRST_TABLE SET "+ set+" = '"+newVar+"' WHERE THE_NAME = '"+theName(input, 3)+"'");
+        stmt.close();
     }
 
     public static void onDelete(String[] input) throws SQLException {
-        connect().execute("DELETE FROM FIRST_TABLE WHERE THE_NAME= '"+theName(input, 2)+"'");
+        connect().execute("DELETE FROM FIRST_TABLE WHERE THE_NAME = '"+theName(input, 2)+"'");
+
+        System.out.println("OK");
+        stmt.close();
     }
 
     public static Statement connect() throws SQLException {
@@ -146,12 +173,16 @@ public class Main {
                 System.out.println(rs.getString("THE_NAME"));
             }
         }
+        stmt.close();
     }
 
     public static String theName(String[] input, int n){
         String theName ="";
         for (int i = n; i<input.length; i++){
-            theName = theName + input[i]+" ";
+            theName = theName + input[i];
+            if (i<input.length){
+                theName = theName + " ";
+            }
         }
         return theName;
     }
