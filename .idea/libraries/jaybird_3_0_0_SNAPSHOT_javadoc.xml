@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jaybird-3.0.0-SNAPSHOT-javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-full-3.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

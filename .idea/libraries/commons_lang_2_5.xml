@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="commons-lang-2.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/commons-lang-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/hsqldb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/jackcess-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/antlr4-runtime-4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/connector-api-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/jna-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/poi-3.7/poi-3.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/poi-3.9/poi-3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/IRENS_DB/ucanaccess-4.0.2/ucanaccess-4.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

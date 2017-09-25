@@ -1,0 +1,9 @@
+create table FIRST_TABLE
+ (ID_FIRST_TABLE INTEGER NOT NULL,
+  KIND 	varchar (20),
+  THE_NAME	varchar (20),
+  STATUS VARCHAR(20),
+  
+  CONSTRAINT PK_FIRST_TABLE
+   primary KEY (ID_FIRST_TABLE)
+);

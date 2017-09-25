@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="IRENS:jar">
+    <output-path>$PROJECT_DIR$/../..</output-path>
+    <root id="archive" name="IRENS.jar">
+      <element id="module-output" name="IRENS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/commons-lang-2.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/commons-logging-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/hsqldb.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/commons-lang-2.5/jackcess-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/antlr4-runtime-4.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/connector-api-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/jaybird-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/jaybird-full-3.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/jaybird-3.0.1-javadoc/jna-4.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/poi-3.7/poi-3.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/poi-3.9/poi-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/IRENS_DB/ucanaccess-4.0.2/ucanaccess-4.0.2.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/IRENS_DB/IRENS_DB.FDB" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/MyDataBase.java" />
+    </root>
+  </artifact>
+</component>
